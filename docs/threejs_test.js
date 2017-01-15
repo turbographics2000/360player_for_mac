@@ -27,14 +27,12 @@ var renderer = new THREE.WebGLRenderer({canvas:viewer});
 renderer.setSize(640, 480);
 document.body.appendChild(renderer.domElement);
 var scene = new THREE.Scene();
-var light = new THREE.PointLight(0xaaaaaa, 0.1, 10000);
 var camera = new THREE.PerspectiveCamera(75, 640 / 480, 0.1, 10000);
 var geometry = new THREE.SphereBufferGeometry(100, 64, 64);
-var texture = new THREE.Texture(img);
+var texture = new THREE.Texture(vid);
 var material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide});
 var mesh = new THREE.Mesh(geometry, material);
 scene.add(camera);
-scene.add(light);
 scene.add(mesh);
 function render() {
   console.log('1');
