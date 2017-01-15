@@ -1,21 +1,20 @@
 var ctx = null;
-/*if(Hls.isSupported()) {
-  var video = document.getElementById('vid');
-  var hls = new Hls();
-  //hls.loadSource('https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd');
-  hls.loadSource('https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8');
-  hls.attachMedia(video);
-  render();
-  hls.on(Hls.Events.MANIFEST_PARSED,function() {
-    ctx = cnv.getContext('2d');
-    video.play();
-  });
-}*/
 
 //cnv.crossOrigin = "Anonymous";
 //vid.crossOrigin = "Anonymous";
 if(window.chrome) {
-  vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd';
+  //vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd';
+  if(Hls.isSupported()) {
+    var hls = new Hls();
+    //hls.loadSource('https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd');
+    hls.loadSource('https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8');
+    hls.attachMedia(vid);
+    render();
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      ctx = cnv.getContext('2d');
+      vid.play();
+    });
+  }
 } else {
   vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
 }
