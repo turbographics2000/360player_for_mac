@@ -2,6 +2,7 @@ var cnv = document.createElement('canvas');
 var vid = document.createElement('video');
 vid.width = 2160;
 vid.height = 1080;
+document.body.appendChild(vid);
 cnv.crossOrigin = "anonymous";
 vid.crossOrigin = "anonymous";
 var ctx = null;
