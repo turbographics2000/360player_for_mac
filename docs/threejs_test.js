@@ -30,7 +30,7 @@ var scene = new THREE.Scene();
 var light = new THREE.PointLight(0xaaaaaa, 0.1, 10000);
 var camera = new THREE.PerspectiveCamera(75, 640 / 480, 0.1, 10000);
 var geometry = new THREE.SphereBufferGeometry(100, 64, 64);
-var texture = new THREE.Texture(cnv);
+var texture = new THREE.Texture(img);
 var material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide});
 var mesh = new THREE.Mesh(geometry, material);
 scene.add(camera);
