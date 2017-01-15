@@ -7,7 +7,7 @@ cnv.height = 720;
 document.body.appendChild(cnv);
 document.body.appendChild(vid);
 
-//cnv.crossOrigin = "anonymous";
+cnv.crossOrigin = "anonymous";
 //vid.crossOrigin = "anonymous";
 var ctx = null;
 
