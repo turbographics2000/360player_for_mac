@@ -44,7 +44,7 @@ function render() {
   if(ctx && vid.videoWidth && vid.videoHeight) {
     ctx.drawImage(vid, 0, 0);
   }
-  if(texture) texture.needsupdate = true;
+  if(texture) texture.needsUpdate = true;
   if(renderer) {
     renderer.render(scene, camera);
   }
