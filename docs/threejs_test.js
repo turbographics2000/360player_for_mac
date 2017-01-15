@@ -21,7 +21,8 @@ if(window.chrome) {
     });
   }
 } else {
-  vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
+  //vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
+  vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560_video_1080_5000000.m3u8';
   vid.onloadedmetadata = function() {
     cnv.width = vid.videoWidth;
     cnv.height = vid.videoHeight;
