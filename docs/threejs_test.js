@@ -1,6 +1,8 @@
 //var cnv = document.createElement('canvas');
 var cnv = domcnv;
 var vid = document.createElement('video');
+vid.width = 1920;
+vid.height = 960;
 vid.style.width = '1920px';
 vid.style.height = '960px';
 cnv.crossOrigin = "anonymous";
