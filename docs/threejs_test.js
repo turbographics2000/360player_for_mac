@@ -1,4 +1,5 @@
-var cnv = document.createElement('canvas');
+//var cnv = document.createElement('canvas');
+var cnv = domcnv;
 var vid = document.createElement('video');
 cnv.crossOrigin = "anonymous";
 vid.crossOrigin = "anonymous";
