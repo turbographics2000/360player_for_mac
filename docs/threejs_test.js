@@ -1,7 +1,8 @@
 var ctx = null;
-
-//cnv.crossOrigin = "Anonymous";
-//vid.crossOrigin = "Anonymous";
+cnv.crossOrigin = "anonymous";
+vid.crossOrigin = "anonymous";
+var cnv = document.createElement('canvas');
+var vid = document.createElement('video');
 if(window.chrome) {
   //vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd';
   if(Hls.isSupported()) {
