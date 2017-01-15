@@ -23,6 +23,8 @@ if(window.chrome) {
 } else {
   vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
   vid.onloadedmetadata = function() {
+    cnv.width = vid.videoWidth;
+    cnv.height = vid.videoHeight;
     ctx = cnv.getContext('2d');
     vid.play();
     render();
@@ -44,10 +46,8 @@ function render() {
   console.log('1');
   requestAnimationFrame(render);
   controls.update();
-  cnv.width = vid.videoWidth;
-  cnv.height = vid.videoHeight;
   if(ctx && vid.videoWidth && vid.videoHeight) {
-    ctx.drawImage(vid, 0, 0);
+    ctx.drawImage(vid, 0, 0, cnv.width, cnv.height);
   }
   if(texture) texture.needsUpdate = true;
   if(renderer) {
