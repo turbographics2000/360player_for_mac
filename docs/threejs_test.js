@@ -1,7 +1,7 @@
 var cnv = document.createElement('canvas');
 var vid = document.createElement('video');
-vid.width = 1920;
-vid.height = 960;
+vid.width = 2160;
+vid.height = 1080;
 cnv.crossOrigin = "anonymous";
 vid.crossOrigin = "anonymous";
 var ctx = null;
