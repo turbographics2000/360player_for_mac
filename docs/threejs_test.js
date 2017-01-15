@@ -24,8 +24,8 @@ if(window.chrome) {
   //vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
   vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560_video_1080_5000000.m3u8';
   vid.onloadedmetadata = function() {
-    cnv.width = vid.videoWidth;
-    cnv.height = vid.videoHeight;
+    cnv.width =　1920;
+    cnv.height = 960;
     ctx = cnv.getContext('2d');
     vid.play();
     render();
