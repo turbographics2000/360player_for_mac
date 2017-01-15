@@ -7,8 +7,8 @@ cnv.height = 720;
 document.body.appendChild(cnv);
 document.body.appendChild(vid);
 
-cnv.crossOrigin = "anonymous";
-vid.crossOrigin = "anonymous";
+//cnv.crossOrigin = "anonymous";
+//vid.crossOrigin = "anonymous";
 var ctx = null;
 
 if(window.chrome) {
@@ -42,7 +42,7 @@ var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
 var controls = new THREE.VRControls(camera);
 var geometry = new THREE.SphereBufferGeometry(100, 64, 64);
-var texture = new THREE.Texture(vid);
+var texture = new THREE.Texture(cnv);
 var material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide});
 var mesh = new THREE.Mesh(geometry, material);
 mesh.scale.set(-1, 1, 1);
