@@ -33,10 +33,10 @@ scene.add(mesh);
 function render() {
   console.log('1');
   requestAnimationFrame(render);
-  cnv.width = video.videoWidth;
-  cnv.height = video.videoHeight;
-  if(ctx && video.videoWidth && video.videoHeight) {
-    ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+  cnv.width = vid.videoWidth;
+  cnv.height = vid.videoHeight;
+  if(ctx && vid.videoWidth && vid.videoHeight) {
+    ctx.drawImage(vid, 0, 0, vid.videoWidth, vid.videoHeight);
   }
   if(texture) texture.needsupdate = true;
   if(renderer) renderer.render(scene, camera);
