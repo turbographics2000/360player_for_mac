@@ -46,6 +46,10 @@ function render() {
   console.log('1');
   requestAnimationFrame(render);
   controls.update();
+  if(!cnv.width || !cnv.height) {
+    cnv.width = vid.videoWidth;
+    cnv.height = vid.videoHeight;
+  }
   if(ctx && vid.videoWidth && vid.videoHeight) {
     ctx.drawImage(vid, 0, 0, cnv.width, cnv.height);
   }
