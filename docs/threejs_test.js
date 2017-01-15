@@ -28,6 +28,7 @@ renderer.setSize(640, 480);
 document.body.appendChild(renderer.domElement);
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, 640 / 480, 0.1, 10000);
+var controls = new THREE.VRControls(camera);
 var geometry = new THREE.SphereBufferGeometry(100, 64, 64);
 var texture = new THREE.Texture(vid);
 var material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide});
@@ -37,6 +38,7 @@ scene.add(mesh);
 function render() {
   console.log('1');
   requestAnimationFrame(render);
+  controls.update();
   cnv.width = vid.videoWidth;
   cnv.height = vid.videoHeight;
   if(ctx && vid.videoWidth && vid.videoHeight) {
