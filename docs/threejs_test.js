@@ -17,11 +17,11 @@ if(window.chrome) {
   }
 } else {
   vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
-}
-vid.onloadedmetadata = function() {
-  ctx = cnv.getContext('2d');
-  vid.play();
-  render();
+  vid.onloadedmetadata = function() {
+    ctx = cnv.getContext('2d');
+    vid.play();
+    render();
+  }
 }
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
