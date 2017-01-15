@@ -1,5 +1,5 @@
 var ctx = null;
-if(Hls.isSupported()) {
+/*if(Hls.isSupported()) {
   var video = document.getElementById('vid');
   var hls = new Hls();
   //hls.loadSource('https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd');
@@ -10,11 +10,16 @@ if(Hls.isSupported()) {
     ctx = cnv.getContext('2d');
     video.play();
   });
-}
+}*/
+
 //cnv.crossOrigin = "Anonymous";
 //vid.crossOrigin = "Anonymous";
 //vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd';
-
+vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
+vid.onloadedmetadata = function() {
+  vid.play();
+  render();
+}
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
