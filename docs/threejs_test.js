@@ -23,7 +23,7 @@ if(window.chrome) {
     render();
   }
 }
-var renderer = new THREE.WebGLRenderer();
+var renderer = new THREE.WebGLRenderer({canvas:viewer});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 var scene = new THREE.Scene();
