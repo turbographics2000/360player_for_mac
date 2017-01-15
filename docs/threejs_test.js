@@ -41,6 +41,7 @@ var geometry = new THREE.SphereBufferGeometry(100, 64, 64);
 var texture = new THREE.Texture(cnv);
 var material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide});
 var mesh = new THREE.Mesh(geometry, material);
+mesh.scale.set(-1, 1, 1);
 scene.add(camera);
 scene.add(mesh);
 function render() {
