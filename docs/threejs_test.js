@@ -40,7 +40,7 @@ function render() {
   cnv.width = vid.videoWidth;
   cnv.height = vid.videoHeight;
   if(ctx && vid.videoWidth && vid.videoHeight) {
-    ctx.drawImage(vid, 0, 0, vid.videoWidth, vid.videoHeight);
+    ctx.drawImage(vid, 0, 0);
   }
   if(texture) texture.needsupdate = true;
   if(renderer) {
