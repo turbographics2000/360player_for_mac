@@ -17,6 +17,7 @@ var ctx = null;
 //vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd';
 vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
 vid.onloadedmetadata = function() {
+  ctx = cnv.getContext('2d');
   vid.play();
   render();
 }
