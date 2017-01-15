@@ -11,25 +11,25 @@ document.body.appendChild(vid);
 vid.crossOrigin = "anonymous";
 var ctx = null;
 
-if(window.chrome) {
+if(true) {
   //vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd';
   if(Hls.isSupported()) {
     var hls = new Hls();
     //hls.loadSource('https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd');
     hls.loadSource('https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8');
-    hls.attachMedia(vid);
-    render();
-    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+    vid.onloadedmetadata = function() {
       ctx = cnv.getContext('2d');
       vid.play();
+      render();
+    }
+    hls.attachMedia(vid);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
     });
   }
 } else {
   vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
   //vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560_video_1080_5000000.m3u8';
   vid.onloadedmetadata = function() {
-    cnv.width =　1920;
-    cnv.height = 960;
     ctx = cnv.getContext('2d');
     vid.play();
     render();
