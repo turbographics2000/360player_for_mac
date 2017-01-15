@@ -2,8 +2,8 @@ var ctx = null;
 if(Hls.isSupported()) {
   var video = document.getElementById('vid');
   var hls = new Hls();
-  hls.loadSource('https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd');
-  //hls.loadSource('https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8');
+  //hls.loadSource('https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd');
+  hls.loadSource('https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8');
   hls.attachMedia(video);
   render();
   hls.on(Hls.Events.MANIFEST_PARSED,function() {
