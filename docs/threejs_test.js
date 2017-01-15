@@ -49,7 +49,6 @@ mesh.scale.set(-1, 1, 1);
 scene.add(camera);
 scene.add(mesh);
 function render() {
-  console.log('1');
   requestAnimationFrame(render);
   controls.update();
   if(!cnv.width || !cnv.height) {
