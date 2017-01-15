@@ -30,9 +30,9 @@ function render() {
   requestAnimationFrame(render);
   cnv.width = video.videoWidth;
   cnv.height = video.videoHeight;
-  if(ctx) {
+  if(ctx && video.videoWidth && video.videoHeight) {
     ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-	}
+  }
   if(texture) texture.needsupdate = true;
   if(renderer) renderer.render(scene, camera);
 }
