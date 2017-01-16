@@ -43,6 +43,8 @@ function render() {
   requestAnimationFrame(render);
   controls.update();
   if(ctx && vid.videoWidth && vid.videoHeight) {
+    cnv.width = vid.videoWidth;
+    cnv.height = vid.videoHeight;
     ctx.drawImage(vid, 0, 0);
   }
   texture.needsUpdate = true;
