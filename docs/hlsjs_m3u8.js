@@ -1,7 +1,6 @@
 var cnv = document.createElement('canvas');
 var vid = document.createElement('video');
 var ctx = null;
-cnv.crossOrigin = 'anonymous';
 vid.crossOrigin = 'anonymous';
 
 var hls = new Hls();
