@@ -40,6 +40,9 @@ function onResize() {
 function render() {
   requestAnimationFrame(render);
   controls.update();
+  if(ctx && vid.videoWidth && vid.videoHeight) {
+    ctx.drawImage(vid, 0, 0);
+  }
   texture.needsUpdate = true;
   manager.render(scene, camera);
 }
