@@ -1,6 +1,8 @@
 var cnv = document.createElement('canvas');
 var vid = document.createElement('video');
 var ctx = null;
+cnv.crossOrigin = 'anonymous';
+vid.crossOrigin = 'anonymous';
 
 vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
 vid.onloadedmetadata = function() {
