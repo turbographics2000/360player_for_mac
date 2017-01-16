@@ -12,14 +12,11 @@ vid.onloadedmetadata = function() {
 hls.attachMedia(vid);
 
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-//renderer.domElement.crossOrigin = 'anonymous';
 document.body.appendChild(renderer.domElement);
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
 var controls = new THREE.VRControls(camera);
 var geometry = new THREE.SphereBufferGeometry(100, 64, 64);
-//var texture = new THREE.Texture(cnv);
 var texture = new THREE.Texture(vid);
 texture.min_filter = THREE.LinearFilter;
 texture.mag_filter = THREE.LinearFilter;
@@ -28,16 +25,23 @@ var mesh = new THREE.Mesh(geometry, material);
 mesh.scale.set(-1, 1, 1);
 scene.add(camera);
 scene.add(mesh);
+
+var effect = new THREE.VREffect(renderer);
+effect.setSize(window.innerWidth, window.innerHeight);
+var manager = new WebVRManager(renderer, effect);
+
+window.addEventListener('resize', onResize, true);
+window.addEventListener('vrdisplaypresentchange', onResize, true);
+
+function onResize() {
+  effect.setSize(window.innerWidth, window.innerHeight);
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+}
+
 function render() {
   requestAnimationFrame(render);
   controls.update();
-  cnv.width = vid.videoWidth;
-  cnv.height = vid.videoHeight;
-  if(ctx && vid.videoWidth && vid.videoHeight) {
-    ctx.drawImage(vid, 0, 0, cnv.width, cnv.height);
-  }
   texture.needsUpdate = true;
-  if(renderer) {
-    renderer.render(scene, camera);
-  }
+  manager.render(scene, camera);
 }
