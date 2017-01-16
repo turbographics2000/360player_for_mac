@@ -55,13 +55,13 @@ scene.add(mesh);
 function render() {
   requestAnimationFrame(render);
   controls.update();
-  if(!cnv.width || !cnv.height) {
+  /*if(!cnv.width || !cnv.height) {
     cnv.width = vid.videoWidth;
     cnv.height = vid.videoHeight;
   }
   if(ctx && vid.videoWidth && vid.videoHeight) {
     ctx.drawImage(vid, 0, 0, cnv.width, cnv.height);
-  }
+  }*/
   if(texture) texture.needsUpdate = true;
   if(renderer) {
     renderer.render(scene, camera);
