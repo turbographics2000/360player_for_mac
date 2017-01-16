@@ -9,8 +9,8 @@ vid.onloadedmetadata = function() {
   vid.play();
   render();
 }
-vid.style.width = '320px';
-vid.style.height = '160px';
+vid.style.width = '2160px';
+vid.style.height = '1080px';
 //document.body.appendChild(vid);
 
 var renderer = new THREE.WebGLRenderer();
