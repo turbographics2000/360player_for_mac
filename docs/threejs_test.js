@@ -11,7 +11,7 @@ document.body.appendChild(vid);
 //vid.crossOrigin = "anonymous";
 var ctx = null;
 
-if(true) {
+if(window.chrome) {
   //vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd';
   if(Hls.isSupported()) {
     var hls = new Hls();
