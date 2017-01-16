@@ -1,6 +1,5 @@
 var vid = document.createElement('video');
 vid.onloadedmetadata = function() {
-  ctx = cnv.getContext('2d');
   vid.play();
   render();
 }
