@@ -1,11 +1,8 @@
-var cnv = document.createElement('canvas');
 var vid = document.createElement('video');
-vid.width = 1440;
-vid.height = 720;
-cnv.width = 1440;
-cnv.height = 720;
-document.body.appendChild(cnv);
-document.body.appendChild(vid);
+//vid.width = 1440;
+//vid.height = 720;
+//document.body.appendChild(cnv);
+//document.body.appendChild(vid);
 
 //cnv.crossOrigin = "anonymous";
 //vid.crossOrigin = "anonymous";
@@ -62,7 +59,7 @@ function render() {
   if(ctx && vid.videoWidth && vid.videoHeight) {
     ctx.drawImage(vid, 0, 0, cnv.width, cnv.height);
   }*/
-  if(texture) texture.needsUpdate = true;
+  texture.needsUpdate = true;
   if(renderer) {
     renderer.render(scene, camera);
   }
