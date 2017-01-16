@@ -1,14 +1,17 @@
 var cnv = document.createElement('canvas');
 var vid = document.createElement('video');
 var ctx = null;
-vid.crossOrigin = 'anonymous';
 
+vid.crossOrigin = 'anonymous';
 vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
 vid.onloadedmetadata = function() {
   ctx = cnv.getContext('2d');
   vid.play();
   render();
 }
+vid.style.width = '320px';
+vid.style.height = '160px';
+document.body.appendChild(vid);
 
 var renderer = new THREE.WebGLRenderer();
 var scene = new THREE.Scene();
