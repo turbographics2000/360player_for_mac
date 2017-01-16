@@ -27,8 +27,9 @@ if(true) {
     });
   }
 } else {
-  vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
+  //vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
   //vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560_video_1080_5000000.m3u8';
+  vid.src = 'output_2pass_1Mbps_placebo.mp4';
   vid.onloadedmetadata = function() {
     ctx = cnv.getContext('2d');
     vid.play();
