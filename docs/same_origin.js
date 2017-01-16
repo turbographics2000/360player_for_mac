@@ -27,7 +27,7 @@ scene.add(mesh);
 
 var effect = new THREE.VREffect(renderer);
 effect.setSize(window.innerWidth, window.innerHeight);
-var manager = new THREE.WebVRManager(renderer, effect);
+var manager = new WebVRManager(renderer, effect);
 
 window.addEventListener('resize', onResize, true);
 window.addEventListener('vrdisplaypresentchange', onResize, true);
