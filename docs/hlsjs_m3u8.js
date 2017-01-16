@@ -42,6 +42,11 @@ function onResize() {
 function render() {
   requestAnimationFrame(render);
   controls.update();
+  if(ctx && vid.videoWidth && vid.videoHieght) {
+    ctx.width = vid.videoWidth;
+    ctx.height = vid.videoHieght;
+    ctx.drawImage(vid, 0, 0);
+  }
   texture.needsUpdate = true;
   manager.render(scene, camera);
 }
