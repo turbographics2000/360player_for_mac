@@ -1,3 +1,4 @@
+var cnv = document.createElement('canvas');
 var vid = document.createElement('video');
 //vid.width = 1440;
 //vid.height = 720;
@@ -41,6 +42,7 @@ var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
 var controls = new THREE.VRControls(camera);
 var geometry = new THREE.SphereBufferGeometry(100, 64, 64);
+//var texture = new THREE.Texture(cnv);
 var texture = new THREE.Texture(vid);
 texture.min_filter = THREE.LinearFilter;
 texture.mag_filter = THREE.LinearFilter;
