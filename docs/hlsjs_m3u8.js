@@ -43,7 +43,7 @@ function onResize() {
 function render() {
   requestAnimationFrame(render);
   controls.update();
-  if(ctx && vid.videoWidth && vid.videoHieght) {
+  if(ctx && vid.videoWidth && vid.videoHeight) {
     ctx.width = vid.videoWidth;
     ctx.height = vid.videoHieght;
     ctx.drawImage(vid, 0, 0);
