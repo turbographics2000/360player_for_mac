@@ -4,7 +4,7 @@ vid.onloadedmetadata = function() {
   render();
 }
 vid.src = 'output.mp4';
-
+vid.setAttribute('webkit-playsinline', 'webkit-playsinline');
 var renderer = new THREE.WebGLRenderer();
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
