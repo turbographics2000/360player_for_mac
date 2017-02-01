@@ -1,8 +1,4 @@
 var vid = document.createElement('video');
-vid.onloadedmetadata = function() {
-  vid.play();
-  render();
-}
 vid.src = 'output.mp4';
 vid.setAttribute('webkit-playsinline', 'webkit-playsinline');
 var renderer = new THREE.WebGLRenderer();
@@ -23,6 +19,12 @@ texture.mag_filter = THREE.LinearFilter;
 effect.setSize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
+renderer.domElement.onclick = function() {
+  vid.play();
+  setTimeout(function() {
+    render();
+  }, 1000);
+}
 
 window.addEventListener('resize', onResize, true);
 window.addEventListener('vrdisplaypresentchange', onResize, true);
