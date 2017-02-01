@@ -13,7 +13,7 @@ vid.onloadedmetadata = function() {
 }
 vid.style.width = '1280px';
 vid.style.height = '1280px';
-document.body.appendChild(vid);
+//document.body.appendChild(vid);
 
 var renderer = new THREE.WebGLRenderer();
 var scene = new THREE.Scene();
