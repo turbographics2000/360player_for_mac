@@ -1,16 +1,3 @@
-var cnv = document.createElement('canvas');
-//var vid = document.createElement('video');
-var ctx = null;
-cnv.setAttribute('crossOrigin', 'anonymous');
-
-vid.crossOrigin = 'anonymous';
-vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
-vid.onloadedmetadata = function() {
-  ctx = cnv.getContext('2d');
-  //vid.play();
-  //render();
-}
-
 var renderer = new THREE.WebGLRenderer();
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
@@ -28,6 +15,7 @@ texture.min_filter = THREE.LinearFilter;
 texture.mag_filter = THREE.LinearFilter;
 effect.setSize(window.innerWidth, window.innerHeight);
 
+renderer.domElement.setAttribute('crossOrigin', 'anonymous');
 document.body.appendChild(renderer.domElement);
 renderer.domElement.onclick = function() {
   vid.play();
