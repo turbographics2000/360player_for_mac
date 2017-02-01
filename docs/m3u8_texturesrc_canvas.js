@@ -10,9 +10,6 @@ vid.onloadedmetadata = function() {
   vid.play();
   render();
 }
-document.body.onclick = function() {
-  vid.play();
-};
 vid.style.width = '2160px';
 vid.style.height = '1080px';
 //document.body.appendChild(vid);
@@ -33,8 +30,10 @@ scene.add(mesh);
 texture.min_filter = THREE.LinearFilter;
 texture.mag_filter = THREE.LinearFilter;
 effect.setSize(window.innerWidth, window.innerHeight);
-
 document.body.appendChild(renderer.domElement);
+renderer.domElement.onclick = function() {
+  vid.play();
+};
 
 window.addEventListener('resize', onResize, true);
 window.addEventListener('vrdisplaypresentchange', onResize, true);
