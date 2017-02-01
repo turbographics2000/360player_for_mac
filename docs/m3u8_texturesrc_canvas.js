@@ -1,15 +1,14 @@
 var cnv = document.createElement('canvas');
-var vid = document.createElement('video');
+//var vid = document.createElement('video');
 var ctx = null;
 cnv.crossOrigin = 'anonymous';
-vid.crossOrigin = 'anonymous';
-vid.setAttribute('webkit-playsinline', 'webkit-playsinline');
+//vid.crossOrigin = 'anonymous';
+//vid.setAttribute('webkit-playsinline', 'webkit-playsinline');
 
 vid.src = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
 vid.onloadedmetadata = function() {
   ctx = cnv.getContext('2d');
-  vid.play();
-  render();
+  //vid.play();
 }
 vid.style.width = '1280px';
 vid.style.height = '1280px';
@@ -34,6 +33,7 @@ effect.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 renderer.domElement.onclick = function() {
   vid.play();
+  render();
 };
 
 window.addEventListener('resize', onResize, true);
