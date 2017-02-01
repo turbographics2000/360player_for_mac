@@ -11,7 +11,7 @@ vid.onloadedmetadata = function() {
   render();
 }
 document.body.onclick = function() {
-  video.play();
+  vid.play();
 };
 vid.style.width = '2160px';
 vid.style.height = '1080px';
